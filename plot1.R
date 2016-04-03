@@ -1,0 +1,5 @@
+exdata <- read.table("exdata-data-household_power_consumption/household_power_consumption.txt", header = TRUE, sep = ";")
+exsub <- subset(exdata, (exdata$Date == "1/2/2007" | exdata$Date == "2/2/2007"))
+png("plot1.png")
+hist(as.numeric(as.character(exsub$Global_active_power)), col = "red", xlab = "Global Active Power (kilowatts)", ylab = "Frequency", main = "Global Active Power")
+dev.off()
